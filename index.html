@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Tim Phillips">
+    <meta name="description" content="Quick pizza delivery from the internet!">
+    
+    <meta property="og:image" content="pizza.png">
+    <meta property="og:description" content="Quick pizza delivery from the internet!">
+    
+    <meta property="og:title" content="Pizza Form">
+    <title>Pizza Form</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="pizza.png" type="image/x-icon">
+
+    <style>
+        body {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: 100%;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(214, 214, 214);
+        }
+
+        ul {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        textarea {
+            border-style: dashed;
+            border-width: 1px;
+            width: 90%;
+        }
+
+        fieldset {
+            border: 5px double lightcoral;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            background-color:white;
+        }
+
+        legend {
+            border: 5px double lightcoral;
+            font-weight: bold;
+            text-align: left;
+            background-color: white;
+            padding-top: 2px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li:hover{
+            animation: move 0.5s;
+            font-size: 105%;
+            font-weight: bold;
+        }
+
+        @keyframes move {
+            0% { transform: translate(0px, 1px) rotate(0deg); }
+        }
+
+    </style>
+</head>
+<body>    
+    <form action="data.json" method="POST">
+        <fieldset>
+            <!-- input boxes -->
+            <legend>User Information</legend>
+            <ul>
+                <li><label for="user.name">User Name<span style="color:red;">*</span><input type="text" id="user.name" name="name"></label></li>
+                <li><label for="user.password">Password<span style="color:red;">*</span><input type="password" id="user.password" name="password"></label></li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <!-- Radio Buttons -->
+            <legend>What drink do you want?<span style="color:red;">*</span></legend>
+            <ul>
+                <li><label for="order.drink"><input type="radio" id="drink.coke" name="order.drink"> Coke</label></li>
+                <li><label for="order.drink"><input type="radio" id="drink.diet-coke" name="order.drink"> Diet Coke</label></li>
+                <li><label for="order.drink"><input type="radio" id="drink.sprite" name="order.drink"> Sprite</label></li>
+                <li><label for="order.drink"><input type="radio" id="drink.water" name="order.drink"> Water</label></li>
+            </ul>
+        </fieldset>
+
+        <fieldset>
+            <!-- Checkboxes -->
+            <legend>Pizza Preference<span style="color:red;">*</span></legend>
+            <ul>
+                <li><label for="order.food1"><input type="checkbox" id="order.food1" name="plain"> Plain</label></li>
+                <li><label for="order.food2"><input type="checkbox" id="order.food2" name="pepperoni"> Pepperoni</label></li>
+                <li><label for="order.food3"><input type="checkbox" id="order.food3" name="chicken"> Chicken</label></li>
+                <li><label for="order.food4"><input type="checkbox" id="order.food4" name="sausage"> Sausage</label></li>
+            </ul>
+
+        </fieldset>
+
+        <fieldset>
+            <!-- Text area -->
+            <legend>Special Instructions</legend>
+            <label for="order.instructions">
+                <ul>
+                    <li>Special Instructions:<br><textarea name="instructions" id="order.instructions" cols="30" rows="10"></textarea></li>
+                    <!-- Submit Button -->
+                    <li><button type="submit" style="list-style-type: none;">Submit</button></li>
+                </ul>
+                <p><span style="color:red;">* = required</span></p>
+            </label>
+
+        </fieldset>
+    </form>
+</body>
+</html>

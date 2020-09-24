@@ -55,8 +55,16 @@
             padding-top: 2px;
         }
 
+        input {
+            border-width: 1px;
+        }
+
         ul {
             list-style: none;
+        }
+
+        input:hover {
+            border: 5px black;
         }
 
         li:hover{
@@ -71,7 +79,8 @@
 
     </style>
 </head>
-<body>    
+<body>
+
     <form action="data.json" method="POST">
         <fieldset>
             <!-- input boxes -->
@@ -86,10 +95,10 @@
             <!-- Radio Buttons -->
             <legend>What drink do you want?<span style="color:red;">*</span></legend>
             <ul>
-                <li><label for="order.drink"><input type="radio" id="drink.coke" name="order.drink"> Coke</label></li>
-                <li><label for="order.drink"><input type="radio" id="drink.diet-coke" name="order.drink"> Diet Coke</label></li>
-                <li><label for="order.drink"><input type="radio" id="drink.sprite" name="order.drink"> Sprite</label></li>
-                <li><label for="order.drink"><input type="radio" id="drink.water" name="order.drink"> Water</label></li>
+                <li><label for="drink.coke"><input type="radio" id="drink.coke" name="order.drink"> Coke</label></li>
+                <li><label for="drink.diet-coke"><input type="radio" id="drink.diet-coke" name="order.drink"> Diet Coke</label></li>
+                <li><label for="drink.sprite"><input type="radio" id="drink.sprite" name="order.drink"> Sprite</label></li>
+                <li><label for="drink.water"><input type="radio" id="drink.water" name="order.drink"> Water</label></li>
             </ul>
         </fieldset>
 
@@ -97,10 +106,11 @@
             <!-- Checkboxes -->
             <legend>Pizza Preference<span style="color:red;">*</span></legend>
             <ul>
-                <li><label for="order.food1"><input type="checkbox" id="order.food1" name="plain"> Plain</label></li>
-                <li><label for="order.food2"><input type="checkbox" id="order.food2" name="pepperoni"> Pepperoni</label></li>
-                <li><label for="order.food3"><input type="checkbox" id="order.food3" name="chicken"> Chicken</label></li>
-                <li><label for="order.food4"><input type="checkbox" id="order.food4" name="sausage"> Sausage</label></li>
+                <li><label for="order.food1"><input type="checkbox" id="order.food1" name="order.pizza"> Plain</label></li>
+                <li><label for="order.food2"><input type="checkbox" id="order.food2" name="order.pizza"> Pepperoni</label></li>
+                <li><label for="order.food3"><input type="checkbox" id="order.food3" name="order.pizza"> Chicken</label></li>
+                <li><label for="order.food4"><input type="checkbox" id="order.food4" name="order.pizza"> Sausage</label></li>
+                <li>(0x-2x)<label for="order.cheese-amount"><input type="range" min="0" max="2" value="0" step="1" class="slider" id="order.cheese-amount"> Extra Cheese</label></li>
             </ul>
 
         </fieldset>
@@ -112,7 +122,7 @@
                 <ul>
                     <li>Special Instructions:<br><textarea name="instructions" id="order.instructions" cols="30" rows="10"></textarea></li>
                     <!-- Submit Button -->
-                    <li><button type="submit" style="list-style-type: none;">Submit</button></li>
+                    <li><input type="image" src="submit.png"></li>
                 </ul>
                 <p><span style="color:red;">* = required</span></p>
             </label>
